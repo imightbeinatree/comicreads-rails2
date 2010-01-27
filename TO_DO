@@ -1,0 +1,18 @@
+create the home page
+
+have the read entry form and a link to view read log or collection, maybe some basic stats (# issues,comics,reads)
+
+read entry form
+ - comic (need to auto drop down matching titles as they type)
+ - issue number 
+ - issue format (select - single issue, TPB, prestige, HC)
+ - read date (prefilled with today - change to calendar select eventually)
+
+processing read form
+
+ - comic and issue number are required
+ - if date entered is not valid just use today
+ - auto create comic or issue if they dont already exist
+ 
+NOTES:
+ - worried about issue number being a string, won't order correctly (numerically ascending), want to change to integer but then we need a way to differentiate between various covers/printings/etc
