@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  issue_num: MyString
+  comic_id: 1
+
+two:
+  issue_num: MyString
+  comic_id: 1
