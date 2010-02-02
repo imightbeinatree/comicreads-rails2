@@ -1,0 +1,12 @@
+2010-02-02
+
+Release Notes - ComicReads - Version 0.1
+commit: http://github.com/imightbeinatree/comicreads/commit/637b05c22f6dd66196743b3b6eeb61fd485f1e74 
+
+First Working Alpha Version
+
+- Enter a "Read" (comic, issue #, read date, notes)
+- View Your Reading Log
+
+Bugs/Issues/Upcoming Features are detailed in the TO_DO file
+
