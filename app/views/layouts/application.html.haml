@@ -1,0 +1,12 @@
+%html{html_attrs('en-US')}
+  %head
+    %title ComicReads
+    = stylesheet_link_tag "cread"
+    = javascript_include_tag :all
+  %body
+    %div#main
+      %div#header
+        %h1 ComicReads
+      %div#bodydiv
+        = yield
+

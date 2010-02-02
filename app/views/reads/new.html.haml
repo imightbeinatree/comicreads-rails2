@@ -1,0 +1,19 @@
+%div= error_messages_for :read
+- form_for :read, :url => reads_path do |f|
+  %p
+    = label_tag 'comic', "Comic"
+    %br/
+    = f.text_field :comic
+  %p
+    = label_tag 'issue_num', "Issue #"
+    %br/
+    = f.text_field :issue_num
+  %p
+    = label_tag 'notes', "Notes"
+    %br/
+    = f.text_area :notes
+  %div
+    %br/
+    %button{:name => "logit", :id => "logit"}
+      %span Log Read
+

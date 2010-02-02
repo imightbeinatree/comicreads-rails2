@@ -1,0 +1,3 @@
+- unless @reads.empty?
+  - for dread in @reads
+    %p= "#{dread.read_date} - #{dread.issue.comic.title} - #{dread.issue.issue_num}"
