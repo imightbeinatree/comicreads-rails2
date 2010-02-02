@@ -7,7 +7,8 @@
   %body
     %div#main
       %div#header
-        %h1 ComicReads
+        %h1 
+          %a{:href => "/"}ComicReads
       %div#bodydiv
         - if flash.include? :notice
           %p.notice= flash[:notice]
