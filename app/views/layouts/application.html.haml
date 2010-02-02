@@ -3,10 +3,15 @@
     %title ComicReads
     = stylesheet_link_tag "cread"
     = javascript_include_tag :all
+    = calendar_date_select_includes "silver"
   %body
     %div#main
       %div#header
         %h1 ComicReads
       %div#bodydiv
+        - if flash.include? :notice
+          %p.notice= flash[:notice]
+        - if flash.include? :error
+          %p.error= flash[:error]
         = yield
 

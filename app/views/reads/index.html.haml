@@ -1,3 +1,5 @@
-- unless @reads.empty?
-  - for dread in @reads
-    %p= "#{dread.read_date} - #{dread.issue.comic.title} - #{dread.issue.issue_num}"
+%p#new_read= link_to "Enter a Read", new_read_path
+- if @reads
+  %ul#read_list
+    - for read in @reads
+      %li= "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num}"
