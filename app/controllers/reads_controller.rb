@@ -4,19 +4,13 @@ class ReadsController < ApplicationController
 
   def create
      @read = Read.new()
-     @comic = Comic.find_by_title(params[:comic])
-     if @comic
-       @issue = Issue.find_by_issue_num_and_comic_id(params[:issue_num],@comic.id)
-     else
-       @comic = Comic.create(:title => params[:comic])
-       @issue = Issue.find_by_issue_num_and_comic_id(params[:issue_num],@comic.id)
-     end
-     unless @issue
-       @issue = Issue.create(:issue_num => params[:issue_num], :comic_id => @comic.id)
-     end
-     @read.issue_id = @issue.id
+     @comic, @issue = @read.find_or_create_issue(params[:comic], params[:issue_num]) 
+puts @comic.inspect
+puts @issue.inspect
+     @read.issue = @issue
      @read.read_date = params[:read_date][:read_date]
      @read.notes = params[:notes]
+puts @read.inspect
      if @read.save
        flash[:notice] = "Read Saved!"
        redirect_to reads_path
