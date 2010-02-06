@@ -21,7 +21,7 @@ puts @read.inspect
   end
 
   def index
-    @reads = Read.all(:order => 'read_date DESC, id DESC')
+    @reads = Read.paginate(:page => params[:page], :order => 'read_date DESC, id DESC')
   end
 
 

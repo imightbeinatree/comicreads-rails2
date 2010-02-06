@@ -3,3 +3,4 @@
   %ul#read_list
     - for read in @reads
       %li= "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num}"
+  = will_paginate @reads
