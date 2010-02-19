@@ -1,8 +1,9 @@
-%p#new_read= link_to "Enter a Read", new_read_path
+%p
+  %small#new_read= link_to "+Add a New Read+", new_read_path
 - if @reads
   %ul#read_list
     - for read in @reads
       %li
         = "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num} "
-        = link_to "[del]", read, :confirm => "for really real?", :method => :delete
+        %small{:class => "extra"}= link_to "[del]", read, :confirm => "for really real?", :method => :delete
   = will_paginate @reads

@@ -1,10 +1,30 @@
 body {
   font-family: lucida grande, helvetica, arial, sans-serif;
-  padding: 1em 2em; }
+  padding: 1em 2em;
+  color: #000; }
 
 h1 {
+  color: #5f5f5f;
+  float: right;
   font-size: 1.5em;
   clear: both; }
   h1 a {
     text-decoration: none;
     color: #000; }
+
+ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px; }
+  ul li {
+    padding: 1px;
+    margin: 2px; }
+
+small {
+  font-size: 80%; }
+
+small.extra {
+  font-size: 65%; }
+
+#title_2ndword {
+  color: #f3e90b; }
