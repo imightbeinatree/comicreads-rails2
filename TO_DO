@@ -4,21 +4,37 @@ maybe some basic stats (# issues,comics,reads)
 
 read entry form issues
  - comic (need to auto drop down matching titles as they type)
- - issue format select needs to be put on the page - single issue, TPB, prestige, HC)
+ - issue format select needs to be put on the page - single issue, TPB, prestige, HC) - relies on way to manage formats
  - read date should be prefilled with today
  - Want to add tags so you can tag issues with anything (character, location, etc)
+ - some sort of concept of own this issue vs just read it (owner flag)
 
+format manager
+- add/delete - can't delete format in use
+
+navigation
+- put under header, have reads | comics
+
+comics home
+- stars next to ones you own throughout interface when filtered to 'all'
+- comics section has a nav at the top - all | mine - these goes to comics index, default filter is 'mine' (do this after owner flag implemented)
+- show comics in alpha order, show number of issues after each title, linked to page for specific comic
+- paginate alphabetically
+
+comic issue home
+- list issues of particular comic
+- list times read
 
 processing read form (check our validations)
  - comic and issue number are required
  - if date entered is not valid just use today
 
 reading log viewing
- - Need to paginate reads (jump to a date type navigation to get back to any place?)
+ - better navigation in reading log, perhaps a "jump to a date" type of navigation to get back to any place
  - Need a way to view full entry for a read so you can view notes (think we need to make sure that read notes are different from the description field we plan to add to comic)
- - Need a way to delete a read, delete an issue from collection
+ - Delete an issue from collection (need to implement owner flag on read entry form)
  - Need other ways to view collection (by comic)
- - Need graphs for reading habits
+ - Need graphs for reading habits -> put them everywhere!! home page!
  
 NOTES:
  - worried about issue number being a string, won't order correctly (numerically ascending), want to change to integer but then we need a way to differentiate between various covers/printings/etc
