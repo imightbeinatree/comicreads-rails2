@@ -1,3 +1,17 @@
+--------------------------------------
+
+2010-02-19
+
+Release Notes - ComicReads - Version 0.2
+commit: http://github.com/imightbeinatree/comicreads/commit/2675a10a1b9bd01ddffda9cd25f38ab0b42a30de
+
+- Paginates "Reading Log" at 25
+- Ability to delete a "Read"
+- Style Updates
+
+
+--------------------------------------
+
 2010-02-02
 
 Release Notes - ComicReads - Version 0.1
