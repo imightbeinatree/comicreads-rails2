@@ -2,5 +2,7 @@
 - if @reads
   %ul#read_list
     - for read in @reads
-      %li= "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num}"
+      %li
+        = "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num} "
+        = link_to "[del]", read, :confirm => "for really real?", :method => :delete
   = will_paginate @reads

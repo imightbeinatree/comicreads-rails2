@@ -24,5 +24,12 @@ puts @read.inspect
     @reads = Read.paginate(:page => params[:page], :order => 'read_date DESC, id DESC')
   end
 
+  def destroy
+   @read = Read.find params[:id]
+   @read.destroy
+   flash[:notice] = "read deleted"
+   redirect_to reads_path
+  end
+
 
 end
