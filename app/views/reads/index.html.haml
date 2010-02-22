@@ -8,3 +8,5 @@
         = "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num} "
         %small{:class => "extra"}= link_to "[del]", read, :confirm => "for really real?", :method => :delete
   = will_paginate @reads
+- else
+  %p You haven't entered any reads yet.
