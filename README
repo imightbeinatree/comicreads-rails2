@@ -6,8 +6,10 @@ maintained by: Michael Orr
 
 features:
  - enter comics you've read by date
+ - enter a range of comics you've read all at once
  - delete read entries
  - view your entries, paginated 25 per page
+
 
 gems:
  - calendar_date_select
