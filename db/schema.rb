@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100127042038) do
+ActiveRecord::Schema.define(:version => 20100223054341) do
 
   create_table "comics", :force => true do |t|
     t.string   "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20100127042038) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "issue_format_id"
+    t.boolean  "owned"
   end
 
   create_table "reads", :force => true do |t|
