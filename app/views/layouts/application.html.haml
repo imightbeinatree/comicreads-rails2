@@ -9,6 +9,7 @@
       %div#header
         %h1 
           %a{:href => "/"}Comic<span id='title_2ndword'>Read</span>s
+        %p.nav <small><a href='comics'>comics</a> | <a href='/reads'>reads</a></small>
       %div#bodydiv
         - if flash.include? :notice
           %p.notice= flash[:notice]

@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-     @reads = Read.all 
+    redirect_to reads_path
   end
 end

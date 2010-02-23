@@ -1,0 +1,14 @@
+%h2 Comics
+- if @comics
+  %table.comic_index
+    %tr
+      %th Reads
+      %th Issues
+      %th Comic
+    - for comic in @comics
+      %tr
+        %td= comic.reads 
+        %td= comic.issues.count
+        %td= comic.title
+- else
+  %p No Comics
