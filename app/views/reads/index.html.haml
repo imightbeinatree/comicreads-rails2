@@ -5,10 +5,11 @@
   %ul#read_list
     - for read in @reads
       %li
-        = "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num} "
+        = "#{read.read_date}: #{read.issue.comic.title} ##{read.issue.issue_num}"
+        = "* " if read.issue.owned
         %small{:class => "extra"}= link_to "[del]", read, :confirm => "for really real?", :method => :delete
   %div
     = will_paginate @reads
-    = "#{@reads_count} reads logged."
+    = "#{@reads_count} reads logged. * indicates an issue you own."
 - else
   %p You haven't entered any reads yet.

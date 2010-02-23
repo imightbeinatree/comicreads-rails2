@@ -26,6 +26,9 @@
     %br/
     = calendar_date_select :read, :read_date
   %p
+    = label_tag 'owned', "I own this issue"
+    = check_box_tag :owned, 1, true
+  %p
     = label_tag 'notes', "Notes"
     %br/
     = text_area_tag :notes, params[:notes]

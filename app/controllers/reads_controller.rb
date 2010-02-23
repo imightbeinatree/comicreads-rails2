@@ -7,46 +7,21 @@ class ReadsController < ApplicationController
   end
 
   def create
-     if params[:range] == 'yes' and (not params[:issue_num].blank?) and (not params[:range_end_issue_num].blank?)
-       if params[:issue_num].to_i < params[:range_end_issue_num].to_i
-         curr_issue = params[:issue_num].to_i
-         last_issue = params[:range_end_issue_num].to_i
-       else
-         curr_issue = params[:range_end_issue_num].to_i
-         last_issue = params[:issue_num].to_i
-       end
-       while curr_issue <= last_issue
-         params[:issue_num] = curr_issue
-         @read = Read.new()
-         @comic, @issue = @read.find_or_create_issue(params[:comic], params[:issue_num]) 
-         @read.issue = @issue
-         @read.read_date = params[:read][:read_date]
-         @read.notes = params[:notes]
-      puts @read.inspect
-         if @read.save
-         else
-           flash[:error] = "Error Saving Read"
-           render :action => 'new'
-           break
-         end
-         curr_issue += 1
-       end
-       flash[:notice] = "Read Saved!"
-       redirect_to reads_path
-     else
-       @read = Read.new()
-       @comic, @issue = @read.find_or_create_issue(params[:comic], params[:issue_num])
-       @read.issue = @issue
-       @read.read_date = params[:read][:read_date]
-       @read.notes = params[:notes]
+     params[:owned] = (params[:owned].to_i == 1)  ? true : false
+     curr_issue, last_issue = Issue.set_range_order(params[:issue_num],params[:range_end_issue_num], params[:range])
+     while curr_issue <= last_issue
+       params[:issue_num] = curr_issue
+       @read = Read.make_read_from_params params
        if @read.save
-         flash[:notice] = "Read Saved!"
-         redirect_to reads_path
        else
          flash[:error] = "Error Saving Read"
          render :action => 'new'
+         break
        end
+       curr_issue += 1
      end
+     flash[:notice] = "Read(s) Saved!"
+     redirect_to reads_path
   end
 
   def index
