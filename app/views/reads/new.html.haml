@@ -2,13 +2,25 @@
 %div= error_messages_for :read
 - form_tag(reads_path) do
   %p
-    = label_tag 'comic', "Comic"
+    = label_tag 'comic', "Comic:"
     %br/
     = text_field_tag :comic, params[:comic]
   %p
-    = label_tag 'issue_num', "Issue #"
-    %br/
+    = label_tag 'issue_num', "Issue #:"
+    %small.extra 
+      [range? 
+      = label_tag :range_no, "no"
+      = radio_button_tag :range, :no, true, :onclick => 'javascript:hide_range_end();'
+      
+      = label_tag :range_yes, "yes"
+      = radio_button_tag :range, :yes, false, :onclick => 'javascript:show_range_end();'
+      ]
+    %br/ 
     = text_field_tag :issue_num, params[:issue_num]
+    %div#range_end
+      = label_tag :range_end_issue_num, "Ending Issue #:"
+      %br/
+      = text_field_tag :range_end_issue_num, params[:range_end_issue_num]
   %p
     = label_tag 'read_date', "Read Date"
     %br/
