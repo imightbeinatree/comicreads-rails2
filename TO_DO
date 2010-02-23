@@ -5,12 +5,20 @@ maybe some basic stats (# issues,comics,reads)
 read entry form issues
  - comic (need to auto drop down matching titles as they type)
  - issue format select needs to be put on the page - single issue, TPB, prestige, HC) - relies on way to manage formats
- - read date should be prefilled with today
+XX_DONE_XX - read date should be prefilled with today
  - Want to add tags so you can tag issues with anything (character, location, etc)
  - some sort of concept of own this issue vs just read it (owner flag)
+XX_DONE_XX - ability to enter a range of issue at one time and have it expand to multiple single issue read entries
+ - integrate issue_letter once it has been added to the issue model, only available in single issue entry mode, is a factor when determining if we have the issue in the db already)
 
 format manager
 - add/delete - can't delete format in use
+--feb.22 - actually thinking that a read still has to be an issue, but where you enter format, if you choose that it is not a single issue, you will be able o specify which collection it is a part of
+
+issue model
+ - give it a concept of issue letter
+ - make the issue number required to be an integer
+ - make the range end isuue number required to be an integer if it is present
 
 navigation
 - put under header, have reads | comics
@@ -37,4 +45,4 @@ reading log viewing
  - Need graphs for reading habits -> put them everywhere!! home page!
  
 NOTES:
- - worried about issue number being a string, won't order correctly (numerically ascending), want to change to integer but then we need a way to differentiate between various covers/printings/etc
+ - worried about issue number being a string, won't order correctly (numerically ascending), want to change to integer but then we need a way to differentiate between various covers/printings/etc --feb.22 - thinking that i'll leave issue number as an integer and add an additional field for variant cover (or issue_letter - A, G, etc)
