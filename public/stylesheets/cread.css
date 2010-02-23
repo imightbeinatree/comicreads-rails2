@@ -32,7 +32,7 @@ small.extra {
 #range_end {
   display: none; }
 
-p.error {
+p.notice {
   border: #008000 1px solid;
   color: #008000;
   padding: 10px;
@@ -41,7 +41,7 @@ p.error {
   text-align: center;
   background-color: #dfffe0; }
 
-p.notice {
+p.error {
   border: #c00 1px solid;
   color: #c00;
   padding: 10px;

@@ -51,6 +51,7 @@ class ReadsController < ApplicationController
 
   def index
     @reads = Read.paginate(:page => params[:page], :order => 'read_date DESC, id DESC')
+    @reads_count = Read.count
   end
 
   def destroy
