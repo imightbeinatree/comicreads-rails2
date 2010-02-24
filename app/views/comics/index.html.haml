@@ -12,7 +12,7 @@
         %td= comic.issues.count
         %td= comic.title
         %td
-          %small{:class => "extra"}
+          %small
             = link_to "[issues]", comic
             = link_to "[del]", comic, :confirm => "this will delete all issues and reads of this comic title as well, proceed?", :method => :delete
 - else

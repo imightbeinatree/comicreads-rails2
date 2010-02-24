@@ -1,0 +1,11 @@
+%h2 #{@issue.comic.title} ##{@issue.issue_num}
+
+- if @issue.reads
+  %h4 #{@issue.reads.count} Logged Reads
+  %ul
+    - for read in @issue.reads
+      %li
+        = read.read_date
+        = " - read note: #{read.notes}" unless read.notes.blank?
+- else
+  %p No reads of this issue have been logged

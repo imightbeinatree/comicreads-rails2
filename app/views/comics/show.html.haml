@@ -5,12 +5,17 @@
     %tr
       %th issue
       %th reads
+      %th more
     - for issue in @comic.issues
       %tr
         %td
           = "##{issue.issue_num}"
           = "*" if issue.owned
         %td= issue.reads.count
+        %td
+          %small
+            = link_to "[info]", issue
+            = link_to "[del]", issue, :confirm => "this will delete all reads of this issue as well, proceed?", :method => :delete
 - else
   %p "No Issues for #{@comic.title}"
 
