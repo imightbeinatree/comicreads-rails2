@@ -7,4 +7,8 @@ class Comic < ActiveRecord::Base
   def reads
     issues.inject(0){ |sum, i| sum += i.reads.count}
   end
+
+  def issues_owned
+    issues.count(:conditions => "owned = 't'")
+  end
 end

@@ -1,0 +1,22 @@
+%h2= @comic.title
+
+- if @comic.issues.count > 0
+  %table
+    %tr
+      %th issue
+      %th reads
+    - for issue in @comic.issues
+      %tr
+        %td
+          = "##{issue.issue_num}"
+          = "*" if issue.owned
+        %td= issue.reads.count
+- else
+  %p "No Issues for #{@comic.title}"
+
+%div
+  %br/
+  %small
+    = "#{@comic.reads} reads logged for #{@comic.issues.count} issues (#{@comic.issues_owned} of which you own)"
+    %br/
+    * indicates an issue you own

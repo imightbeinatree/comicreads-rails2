@@ -5,12 +5,15 @@
       %th Reads
       %th Issues
       %th Comic
+      %th More
     - for comic in @comics
       %tr
         %td= comic.reads 
         %td= comic.issues.count
+        %td= comic.title
         %td
-          = comic.title
-          %small{:class => "extra"}= link_to "[del]", comic, :confirm => "this will delete all issues and reads of this comic title as well, proceed?", :method => :delete
+          %small{:class => "extra"}
+            = link_to "[issues]", comic
+            = link_to "[del]", comic, :confirm => "this will delete all issues and reads of this comic title as well, proceed?", :method => :delete
 - else
   %p No Comics
