@@ -1,5 +1,5 @@
 class Comic < ActiveRecord::Base
-  has_many :issues
+  has_many :issues, :dependent => :destroy
   validates_presence_of :title
   cattr_reader :per_page
   @@per_page = 50
