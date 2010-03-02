@@ -30,8 +30,18 @@ class ReadsController < ApplicationController
   end
 
   def destroy
-    @read = Read.find params[:id]
-    @read.destroy
+    read = Read.find params[:id]
+    issue = Issue.find read.issue_id
+    comic = Comic.find issue.comic_id
+    all_issue_reads = Read.find_all_by_issue_id read.issue_id
+    if all_issue_reads.count == 1
+      all_comic_issues = Issue.find_all_by_comic_id issue.comic_id
+      if all_comic_issues.count == 1
+        comic.destroy
+      end
+      issue.destroy
+    end
+    read.destroy
     flash[:notice] = "read deleted"
     redirect_to reads_path
   end
